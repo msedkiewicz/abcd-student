@@ -21,8 +21,7 @@ pipeline {
             steps {
                 sh '''
                     docker run --name juice-shop -d --rm \
-                        -p 3000:3000 \
-                        bkimminich/juice-shop
+                        -p 3000:3000 bkimminich/juice-shop
                     sleep 5
                 '''
                 sh '''
