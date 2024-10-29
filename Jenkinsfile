@@ -12,6 +12,11 @@ pipeline {
                 }
             }
         }
+        stage('Prepare') {
+            steps {
+                sh 'mkdir -p results/'
+            }
+        }
         stage('[ZAP] Baseline passive-scan') {
             steps {
                 sh 'mkdir -p results/'
