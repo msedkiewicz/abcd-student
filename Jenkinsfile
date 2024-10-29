@@ -58,7 +58,6 @@ pipeline {
             }
         }
     }
-    }
     post {
         always {
             echo 'Archiving results'
