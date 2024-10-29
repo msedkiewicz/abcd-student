@@ -26,8 +26,8 @@ pipeline {
                 '''
                 sh '''
                     docker run --name zap \
-                        --add-host=host.docker.internal:host-gateway \
-                        -v /mnt/D/devops/abcd-student/.zap:/zap/wrk/:rw \
+                        --add-host=host.docker.internal:host-gateway \ resources/dast/zap
+                        -v "${WORKSPACE}/resources/dast/zap:/zap/wrk/:rw" \
                         -t ghcr.io/zaproxy/zaproxy:stable bash -c \
                         "zap.sh -cmd -addonupdate; zap.sh -cmd -addoninstall communityScripts -addoninstall pscanrulesAlpha -addoninstall pscanrulesBeta -autorun /zap/wrk/passive.yaml" \
                         || true
