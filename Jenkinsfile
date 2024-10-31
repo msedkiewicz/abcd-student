@@ -38,13 +38,7 @@ pipeline {
                     sh '''
                         docker cp zap:/zap/wrk/reports/zap_html_report.html "${WORKSPACE}/results/zap_html_report.html"
                         docker cp zap:/zap/wrk/reports/zap_xml_report.xml "${WORKSPACE}/results/zap_xml_report.xml"
-                        docker stop zap juice-shop
-                        docker rm zap
                     '''
-                }
-            }
-            post {
-                always {
                     echo 'Archiving results'
                     archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
                     echo 'Sending ZAP passive scan reports to DefectDojo'
@@ -73,18 +67,16 @@ pipeline {
             steps {
                 echo 'Starting osv scan...'
                 echo 'Uploading OSV scan report to DefectDojo'
-                defectDojoPublisher(artifact: '${REPORT_DIR}/osv-scan-results.json', 
-                    productName: 'Juice Shop', 
-                    scanType: 'OSV Scan', 
-                    engagementName: '${EMAIL}') 
+                defectDojoPublisher(artifact: '${REPORT_DIR}/osv-scan-results.json',
+                    productName: 'Juice Shop',
+                    scanType: 'OSV Scan',
+                    engagementName: '${EMAIL}')
             }
         }
         stage('Cleaning') {
             post {
                 always {
                     sh '''
-                        docker cp zap:/zap/wrk/reports/zap_html_report.html "${WORKSPACE}/results/zap_html_report.html"
-                        docker cp zap:/zap/wrk/reports/zap_xml_report.xml "${WORKSPACE}/results/zap_xml_report.xml"
                         docker stop zap juice-shop
                         docker rm zap
                     '''
