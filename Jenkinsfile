@@ -54,14 +54,14 @@ pipeline {
                 osv-scanner scan --lockfile package-lock.json --json --output "${WORKSPACE}/results/osv-report.json"  || true
                 '''
             }
-            // post {
-            //     always {
-            //         echo 'Archiving results'
-            //         archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
-            //         echo 'Sending OSV scan report to DefectDojo'
-            //         defectDojoPublisher(artifact: 'results/osv-report.json', productName: 'Juice Shop', scanType: 'OSV Scan', engagementName: 'magdalenainspirations@gmail.com')
-            //     }
-            // }
+            post {
+                always {
+                    echo 'Archiving results'
+                    archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
+                    echo 'Sending OSV scan report to DefectDojo'
+                    defectDojoPublisher(artifact: 'results/osv-report.json', productName: 'Juice Shop', scanType: 'OSV Scan', engagementName: 'magdalenainspirations@gmail.com')
+                }
+            }
         }
         stage('Cleaning') {
             steps {
