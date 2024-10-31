@@ -49,7 +49,7 @@ pipeline {
         stage('OSV-Scanner') {
             steps {
                 sh '''
-                osv-scanner scan --lockfile juice-shop/package-lock.json --json --output results/osv-report.json  || true
+                osv-scanner scan --lockfile bkimminich/juice-shop/package-lock.json --json --output "${WORKSPACE}/results/osv-report.json"  || true
                 '''
             }
             post {
