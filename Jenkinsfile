@@ -61,25 +61,16 @@ pipeline {
                 }
             }
         }
-
-
-        stage('[OSV-SCAN] Run scan') {
-            steps {
-                echo 'Starting osv scan...'
-                echo 'Uploading OSV scan report to DefectDojo'
-                defectDojoPublisher(artifact: '${REPORT_DIR}/osv-scan-results.json',
-                    productName: 'Juice Shop',
-                    scanType: 'OSV Scan',
-                    engagementName: '${EMAIL}')
-            }
-        }
         stage('Cleaning') {
+            steps {
+                sh '''
+                    docker stop zap juice-shop
+                    docker rm zap
+                '''
+            }
             post {
                 always {
-                    sh '''
-                        docker stop zap juice-shop
-                        docker rm zap
-                    '''
+                    echo 'cleaning complete'
                 }
             }
         }
