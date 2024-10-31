@@ -67,7 +67,6 @@ pipeline {
             steps {
                 sh '''
                     docker stop juice-shop
-                    docker rm juice-shop
                 '''
             }
             post {
