@@ -12,7 +12,7 @@ pipeline {
                 }
             }
         }
-        stage('Prepare') {
+        stage('Prepare report space') {
             steps {
                 sh 'mkdir -p results/'
             }
@@ -43,21 +43,53 @@ pipeline {
                     '''
                 }
             }
+            post {
+                always {
+                    echo 'Archiving results'
+                    archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
+                    echo 'Sending ZAP passive scan reports to DefectDojo'
+                    defectDojoPublisher(artifact: 'results/zap_xml_report.xml', productName: 'Juice Shop', scanType: 'ZAP Scan', engagementName: 'magdalenainspirations@gmail.com')
+                }
+            }
         }
-         stage('OSV-Scanner') {
+        stage('OSV-Scanner') {
             steps {
                 sh '''
-                osv-scanner scan --lockfile package-lock.json --json > osv_report.json  || true
+                osv-scanner scan --lockfile juice-shop/package-lock.json --json --output results/osv-report.json  || true
                 '''
+            }
+            post {
+                always {
+                    echo 'Archiving results'
+                    archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
+                    echo 'Sending OSV scan report to DefectDojo'
+                    defectDojoPublisher(artifact: 'results/osv-report.json', productName: 'Juice Shop', scanType: 'OSV Scan', engagementName: 'magdalenainspirations@gmail.com')
+                }
+            }
+        }
+
+
+        stage('[OSV-SCAN] Run scan') {
+            steps {
+                echo 'Starting osv scan...'
+                echo 'Uploading OSV scan report to DefectDojo'
+                defectDojoPublisher(artifact: '${REPORT_DIR}/osv-scan-results.json', 
+                    productName: 'Juice Shop', 
+                    scanType: 'OSV Scan', 
+                    engagementName: '${EMAIL}') 
+            }
+        }
+        stage('Cleaning') {
+            post {
+                always {
+                    sh '''
+                        docker cp zap:/zap/wrk/reports/zap_html_report.html "${WORKSPACE}/results/zap_html_report.html"
+                        docker cp zap:/zap/wrk/reports/zap_xml_report.xml "${WORKSPACE}/results/zap_xml_report.xml"
+                        docker stop zap juice-shop
+                        docker rm zap
+                    '''
+                }
             }
         }
     }
-    // post {
-    //     always {
-    //         echo 'Archiving results'
-    //         archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
-    //         echo 'Sending reports to DefectDojo'
-    //         defectDojoPublisher(artifact: 'results/zap_xml_report.xml', productName: 'Juice Shop', scanType: 'ZAP Scan', engagementName: 'magdalenainspirations@gmail.com')
-    //     }
-    // }
 }
