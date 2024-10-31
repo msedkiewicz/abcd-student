@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<OWASPZAPReport programName="ZAP" version="2.15.0" generated="Thu, 31 Oct 2024 10:38:40">
+<OWASPZAPReport programName="ZAP" version="2.15.0" generated="Thu, 31 Oct 2024 10:51:14">
 	
 		<site name="http://cdnjs.cloudflare.com" host="cdnjs.cloudflare.com" port="80" ssl="false">
 			<alerts>
@@ -108,26 +108,6 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/assets/public/favicon_js.ico</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:39:13</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
 									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:55:18</uri>
 									<method>GET</method>
 									<param></param>
@@ -138,7 +118,7 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/runtime.js</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:286:9</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -148,7 +128,7 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/styles.css</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:328:13</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -158,57 +138,7 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:280:10</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:365:14</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:376:14</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:421:3</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/layer.js:95:5</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence></evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/serve-index/index.js:145:39</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/main.js</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -227,13 +157,13 @@
 								</instance>
 							
 						</instances>
-						<count>19</count>
+						<count>12</count>
 						<solution>&lt;p&gt;Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.&lt;/p&gt;</solution>
 						<otherinfo></otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy&lt;/p&gt;&lt;p&gt;https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html&lt;/p&gt;&lt;p&gt;https://www.w3.org/TR/CSP/&lt;/p&gt;&lt;p&gt;https://w3c.github.io/webappsec-csp/&lt;/p&gt;&lt;p&gt;https://web.dev/articles/csp&lt;/p&gt;&lt;p&gt;https://caniuse.com/#feat=contentsecuritypolicy&lt;/p&gt;&lt;p&gt;https://content-security-policy.com/&lt;/p&gt;</reference>
 						<cweid>693</cweid>
 						<wascid>15</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>1</sourceid>
 					</alertitem>
 				
 				
@@ -280,16 +210,6 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/ftp/acquisitions.md</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
 									<uri>http://host.docker.internal:3000/ftp/coupons_2013.md.bak</uri>
 									<method>GET</method>
 									<param></param>
@@ -300,87 +220,7 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/ftp/eastere.gg</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
 									<uri>http://host.docker.internal:3000/ftp/encrypt.pyc</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/ftp/incident-support.kdbx</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/ftp/legal.md</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/ftp/package.json.bak</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/ftp/suspicious_errors.yml</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:39:13</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:55:18</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Access-Control-Allow-Origin: *</evidence>
-									<otherinfo>The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:280:10</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -459,13 +299,13 @@
 								</instance>
 							
 						</instances>
-						<count>21</count>
+						<count>12</count>
 						<solution>&lt;p&gt;Ensure that sensitive data is not available in an unauthenticated manner (using IP address white-listing, for instance).&lt;/p&gt;&lt;p&gt;Configure the &quot;Access-Control-Allow-Origin&quot; HTTP header to a more restrictive set of domains, or remove all CORS headers entirely, to allow the web browser to enforce the Same Origin Policy (SOP) in a more restrictive manner.&lt;/p&gt;</solution>
 						<otherinfo>&lt;p&gt;The CORS misconfiguration on the web server permits cross-domain read requests from arbitrary third party domains, using unauthenticated APIs on this domain. Web browser implementations do not permit arbitrary third parties to read the response from authenticated APIs, however. This reduces the risk somewhat. This misconfiguration could be used by an attacker to access data that is available in an unauthenticated manner, but which uses some other form of security, such as IP address white-listing.&lt;/p&gt;</otherinfo>
 						<reference>&lt;p&gt;https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.html5_overly_permissive_cors_policy&lt;/p&gt;</reference>
 						<cweid>264</cweid>
 						<wascid>14</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>1</sourceid>
 					</alertitem>
 				
 				
@@ -482,132 +322,142 @@
 						<instances>
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9g_B&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaFC&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>TSGXm3lEl9IqA7pbAAAC</evidence>
+									<evidence>iydrgqx7dZEwnJMrAAAC</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gIu&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaKf&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>ZmeN4C3Vn-M1YySNAAAA</evidence>
+									<evidence>iydrgqx7dZEwnJMrAAAC</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gKg&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZp5&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>ZmeN4C3Vn-M1YySNAAAA</evidence>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gwb&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZrM&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>TSGXm3lEl9IqA7pbAAAC</evidence>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gyv&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZwq&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>TSGXm3lEl9IqA7pbAAAC</evidence>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=E5pfJIYFoh2hRMAGAAAE</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>E5pfJIYFoh2hRMAGAAAE</evidence>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>TSGXm3lEl9IqA7pbAAAC</evidence>
+									<evidence>iydrgqx7dZEwnJMrAAAC</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=websocket&amp;sid=Xx1dtdAbPxMtWT8qAAAE</uri>
 									<method>GET</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>ZmeN4C3Vn-M1YySNAAAA</evidence>
+									<evidence>Xx1dtdAbPxMtWT8qAAAE</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gIt&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaFB&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>POST</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>ZmeN4C3Vn-M1YySNAAAA</evidence>
+									<evidence>iydrgqx7dZEwnJMrAAAC</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gKe&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCb0g&amp;sid=Xx1dtdAbPxMtWT8qAAAE</uri>
 									<method>POST</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>ZmeN4C3Vn-M1YySNAAAA</evidence>
+									<evidence>Xx1dtdAbPxMtWT8qAAAE</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gLz&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZp3&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>ZmeN4C3Vn-M1YySNAAAA</evidence>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gwZ&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZrL&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>sid</param>
 									<attack></attack>
-									<evidence>TSGXm3lEl9IqA7pbAAAC</evidence>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZwn&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
+									<method>POST</method>
+									<param>sid</param>
+									<attack></attack>
+									<evidence>GdgXI0P-BVx3RLtPAAAA</evidence>
 									<otherinfo></otherinfo>
 								</instance>
 							
 						</instances>
-						<count>12</count>
+						<count>13</count>
 						<solution>&lt;p&gt;For secure content, put session ID in a cookie. To be even more secure consider using a combination of cookie and URL rewrite.&lt;/p&gt;</solution>
 						<otherinfo></otherinfo>
 						<reference>&lt;p&gt;https://seclists.org/webappsec/2002/q4/111&lt;/p&gt;</reference>
 						<cweid>200</cweid>
 						<wascid>13</wascid>
-						<sourceid>283</sourceid>
+						<sourceid>269</sourceid>
 					</alertitem>
 				
 				
@@ -644,26 +494,6 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:39:13</uri>
-									<method>GET</method>
-									<param>//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</param>
-									<attack></attack>
-									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js&quot;&gt;&lt;/script&gt;</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:39:13</uri>
-									<method>GET</method>
-									<param>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</param>
-									<attack></attack>
-									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js&quot;&gt;&lt;/script&gt;</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
 									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:55:18</uri>
 									<method>GET</method>
 									<param>//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</param>
@@ -684,7 +514,7 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:280:10</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:286:9</uri>
 									<method>GET</method>
 									<param>//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</param>
 									<attack></attack>
@@ -694,7 +524,47 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:280:10</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:286:9</uri>
+									<method>GET</method>
+									<param>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</param>
+									<attack></attack>
+									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js&quot;&gt;&lt;/script&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:328:13</uri>
+									<method>GET</method>
+									<param>//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</param>
+									<attack></attack>
+									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js&quot;&gt;&lt;/script&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:328:13</uri>
+									<method>GET</method>
+									<param>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</param>
+									<attack></attack>
+									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js&quot;&gt;&lt;/script&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/main.js</uri>
+									<method>GET</method>
+									<param>//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js</param>
+									<attack></attack>
+									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js&quot;&gt;&lt;/script&gt;</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/main.js</uri>
 									<method>GET</method>
 									<param>//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js</param>
 									<attack></attack>
@@ -723,13 +593,13 @@
 								</instance>
 							
 						</instances>
-						<count>10</count>
+						<count>12</count>
 						<solution>&lt;p&gt;Ensure JavaScript source files are loaded from only trusted sources, and the sources can&apos;t be controlled by end users of the application.&lt;/p&gt;</solution>
 						<otherinfo></otherinfo>
 						<reference></reference>
 						<cweid>829</cweid>
 						<wascid>15</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>1</sourceid>
 					</alertitem>
 				
 				
@@ -771,7 +641,7 @@
 						<reference>&lt;p&gt;https://angular.io/guide/security&lt;/p&gt;</reference>
 						<cweid>749</cweid>
 						<wascid>-1</wascid>
-						<sourceid>22</sourceid>
+						<sourceid>21</sourceid>
 					</alertitem>
 				
 				
@@ -838,16 +708,6 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/ftp/package.json.bak</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Feature-Policy</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
 									<uri>http://host.docker.internal:3000/ftp/suspicious_errors.yml</uri>
 									<method>GET</method>
 									<param></param>
@@ -858,37 +718,7 @@
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/assets/public/favicon_js.ico</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Feature-Policy</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:39:13</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Feature-Policy</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
 									<uri>http://host.docker.internal:3000/juice-shop/build/routes/fileServer.js:55:18</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>Feature-Policy</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:280:10</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -947,13 +777,13 @@
 								</instance>
 							
 						</instances>
-						<count>16</count>
+						<count>12</count>
 						<solution>&lt;p&gt;Ensure that your web server, application server, load balancer, etc. is configured to set the Permissions-Policy header instead of the Feature-Policy header.&lt;/p&gt;</solution>
 						<otherinfo></otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Permissions-Policy&lt;/p&gt;&lt;p&gt;https://scotthelme.co.uk/goodbye-feature-policy-and-hello-permissions-policy/&lt;/p&gt;</reference>
 						<cweid>16</cweid>
 						<wascid>15</wascid>
-						<sourceid>1</sourceid>
+						<sourceid>8</sourceid>
 					</alertitem>
 				
 				
@@ -1059,7 +889,7 @@
 						<reference>&lt;p&gt;https://tools.ietf.org/html/rfc1918&lt;/p&gt;</reference>
 						<cweid>200</cweid>
 						<wascid>13</wascid>
-						<sourceid>205</sourceid>
+						<sourceid>194</sourceid>
 					</alertitem>
 				
 				
@@ -1104,34 +934,14 @@
 									<otherinfo>1970691216, which evaluates to: 2032-06-12 22:13:36.</otherinfo>
 								</instance>
 							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/rest/products/search?q=</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>1969196030</evidence>
-									<otherinfo>1969196030, which evaluates to: 2032-05-26 14:53:50.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/rest/products/search?q=</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>1970691216</evidence>
-									<otherinfo>1970691216, which evaluates to: 2032-06-12 22:13:36.</otherinfo>
-								</instance>
-							
 						</instances>
-						<count>5</count>
+						<count>3</count>
 						<solution>&lt;p&gt;Manually confirm that the timestamp data is not sensitive, and that the data cannot be aggregated to disclose exploitable patterns.&lt;/p&gt;</solution>
 						<otherinfo>&lt;p&gt;1734944650, which evaluates to: 2024-12-23 09:04:10.&lt;/p&gt;</otherinfo>
 						<reference>&lt;p&gt;https://cwe.mitre.org/data/definitions/200.html&lt;/p&gt;</reference>
 						<cweid>200</cweid>
 						<wascid>13</wascid>
-						<sourceid>22</sourceid>
+						<sourceid>21</sourceid>
 					</alertitem>
 				
 				
@@ -1148,7 +958,7 @@
 						<instances>
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9g_B&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaCE</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1159,7 +969,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gFR</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaFC&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1170,7 +980,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gIu&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaKf&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1181,7 +991,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gKg&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCayC</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1192,7 +1002,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gs7</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZkn</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1203,7 +1013,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gwb&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZp5&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1214,7 +1024,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gyv&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZrM&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1225,7 +1035,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9hYW</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZwq&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>GET</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1236,7 +1046,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gIt&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaFB&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>POST</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1247,7 +1057,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gKe&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZp3&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1258,7 +1068,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gLz&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZrL&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1269,7 +1079,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gwZ&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZwn&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>x-content-type-options</param>
 									<attack></attack>
@@ -1285,7 +1095,7 @@ At &quot;High&quot; threshold this scan rule will not alert on client or server 
 						<reference>&lt;p&gt;https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/gg622941(v=vs.85)&lt;/p&gt;&lt;p&gt;https://owasp.org/www-community/Security_Headers&lt;/p&gt;</reference>
 						<cweid>693</cweid>
 						<wascid>15</wascid>
-						<sourceid>283</sourceid>
+						<sourceid>256</sourceid>
 					</alertitem>
 				
 				
@@ -1430,7 +1240,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<reference></reference>
 						<cweid>200</cweid>
 						<wascid>13</wascid>
-						<sourceid>22</sourceid>
+						<sourceid>21</sourceid>
 					</alertitem>
 				
 				
@@ -1447,7 +1257,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<instances>
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gIt&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCaFB&amp;sid=iydrgqx7dZEwnJMrAAAC</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1457,7 +1267,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gKe&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCb0g&amp;sid=Xx1dtdAbPxMtWT8qAAAE</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1467,7 +1277,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gLz&amp;sid=ZmeN4C3Vn-M1YySNAAAA</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCcBH&amp;sid=NnWQUh6WpPO15QPcAAAG</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1477,7 +1287,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9gwZ&amp;sid=TSGXm3lEl9IqA7pbAAAC</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCcyy&amp;sid=f9z2KKuXPRbZTfbKAAAI</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1487,7 +1297,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9heB&amp;sid=E5pfJIYFoh2hRMAGAAAE</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCd7_&amp;sid=IiTSoO3YCyEfdVpKAAAK</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1497,7 +1307,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9iJx&amp;sid=sJUFQKmWQJVVEt40AAAG</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCdFe&amp;sid=gH2FIV7myJetq45hAAAM</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1507,7 +1317,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9j0-&amp;sid=7z9FNiEqVL4PQP4iAAAI</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCdgd&amp;sid=b3WaFZHIas5s5iMOAAAP</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1517,7 +1327,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9jOV&amp;sid=-nbmxwEgzhH5UImcAAAK</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCdiW&amp;sid=WzEGaEBpokKoffIxAAAO</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1527,7 +1337,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9jwy&amp;sid=r8C7BJUuDBcPZliKAAAO</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCf7B&amp;sid=CNBfKDSM_C96pVsmAAAT</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1537,7 +1347,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9jXe&amp;sid=IZmOIDaEgFpp08o1AAAM</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZp3&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1547,7 +1357,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9k9V&amp;sid=iQcpdCemgNWERGUaAAAQ</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZrL&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1557,7 +1367,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBY9kXM&amp;sid=73rZS_WriFA6vjxsAAAR</uri>
+									<uri>http://host.docker.internal:3000/socket.io/?EIO=4&amp;transport=polling&amp;t=PBYCZwn&amp;sid=GdgXI0P-BVx3RLtPAAAA</uri>
 									<method>POST</method>
 									<param>x-frame-options</param>
 									<attack></attack>
@@ -1572,7 +1382,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options&lt;/p&gt;</reference>
 						<cweid>1021</cweid>
 						<wascid>15</wascid>
-						<sourceid>209</sourceid>
+						<sourceid>270</sourceid>
 					</alertitem>
 				
 				
@@ -1590,16 +1400,6 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 								<instance>
 									<uri>http://host.docker.internal:3000/</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>&lt;script src=&quot;//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js&quot;&gt;&lt;/script&gt;</evidence>
-									<otherinfo>No links have been found while there are scripts, which is an indication that this is a modern web application.</otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/assets/public/favicon_js.ico</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -1629,7 +1429,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/build/routes/styles.css</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/build/routes/main.js</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -1639,7 +1439,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:280:10</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/build/routes/polyfills.js</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -1689,7 +1489,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/index.js:421:3</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/main.js</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -1699,7 +1499,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 							
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/juice-shop/node_modules/serve-index/index.js:145:39</uri>
+									<uri>http://host.docker.internal:3000/juice-shop/node_modules/express/lib/router/runtime.js</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -1718,7 +1518,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 								</instance>
 							
 						</instances>
-						<count>13</count>
+						<count>12</count>
 						<solution>&lt;p&gt;This is an informational alert and so no changes are required.&lt;/p&gt;</solution>
 						<otherinfo>&lt;p&gt;No links have been found while there are scripts, which is an indication that this is a modern web application.&lt;/p&gt;</otherinfo>
 						<reference></reference>
@@ -1741,17 +1541,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<instances>
 							
 								<instance>
-									<uri>http://host.docker.internal:3000/ftp/eastere.gg</uri>
-									<method>GET</method>
-									<param></param>
-									<attack></attack>
-									<evidence>403</evidence>
-									<otherinfo></otherinfo>
-								</instance>
-							
-							
-								<instance>
-									<uri>http://host.docker.internal:3000/ftp/package.json.bak</uri>
+									<uri>http://host.docker.internal:3000/ftp/coupons_2013.md.bak</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -1760,13 +1550,13 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 								</instance>
 							
 						</instances>
-						<count>2</count>
+						<count>1</count>
 						<solution>&lt;p&gt;The content may be marked as storable by ensuring that the following conditions are satisfied:&lt;/p&gt;&lt;p&gt;The request method must be understood by the cache and defined as being cacheable (&quot;GET&quot;, &quot;HEAD&quot;, and &quot;POST&quot; are currently defined as cacheable)&lt;/p&gt;&lt;p&gt;The response status code must be understood by the cache (one of the 1XX, 2XX, 3XX, 4XX, or 5XX response classes are generally understood)&lt;/p&gt;&lt;p&gt;The &quot;no-store&quot; cache directive must not appear in the request or response header fields&lt;/p&gt;&lt;p&gt;For caching by &quot;shared&quot; caches such as &quot;proxy&quot; caches, the &quot;private&quot; response directive must not appear in the response&lt;/p&gt;&lt;p&gt;For caching by &quot;shared&quot; caches such as &quot;proxy&quot; caches, the &quot;Authorization&quot; header field must not appear in the request, unless the response explicitly allows it (using one of the &quot;must-revalidate&quot;, &quot;public&quot;, or &quot;s-maxage&quot; Cache-Control response directives)&lt;/p&gt;&lt;p&gt;In addition to the conditions above, at least one of the following conditions must also be satisfied by the response:&lt;/p&gt;&lt;p&gt;It must contain an &quot;Expires&quot; header field&lt;/p&gt;&lt;p&gt;It must contain a &quot;max-age&quot; response directive&lt;/p&gt;&lt;p&gt;For &quot;shared&quot; caches such as &quot;proxy&quot; caches, it must contain a &quot;s-maxage&quot; response directive&lt;/p&gt;&lt;p&gt;It must contain a &quot;Cache Control Extension&quot; that allows it to be cached&lt;/p&gt;&lt;p&gt;It must have a status code that is defined as cacheable by default (200, 203, 204, 206, 300, 301, 404, 405, 410, 414, 501).&lt;/p&gt;</solution>
 						<otherinfo></otherinfo>
 						<reference>&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7234&lt;/p&gt;&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7231&lt;/p&gt;&lt;p&gt;https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&lt;/p&gt;</reference>
 						<cweid>524</cweid>
 						<wascid>13</wascid>
-						<sourceid>43</sourceid>
+						<sourceid>35</sourceid>
 					</alertitem>
 				
 				
@@ -1838,7 +1628,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Dest&lt;/p&gt;</reference>
 						<cweid>352</cweid>
 						<wascid>9</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>8</sourceid>
 					</alertitem>
 				
 				
@@ -1910,7 +1700,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Mode&lt;/p&gt;</reference>
 						<cweid>352</cweid>
 						<wascid>9</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>8</sourceid>
 					</alertitem>
 				
 				
@@ -1982,7 +1772,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-Site&lt;/p&gt;</reference>
 						<cweid>352</cweid>
 						<wascid>9</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>8</sourceid>
 					</alertitem>
 				
 				
@@ -2054,7 +1844,7 @@ C&quot;&#xfffd;&#xfffd;&apos;&#xfffd;i&#x1ed;IEND&#xfffd;B`&#xfffd;</otherinfo>
 						<reference>&lt;p&gt;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Sec-Fetch-User&lt;/p&gt;</reference>
 						<cweid>352</cweid>
 						<wascid>9</wascid>
-						<sourceid>6</sourceid>
+						<sourceid>8</sourceid>
 					</alertitem>
 				
 				
@@ -2098,7 +1888,7 @@ json:continueCode</otherinfo>
 						<reference>&lt;p&gt;https://www.zaproxy.org/docs/desktop/addons/authentication-helper/session-mgmt-id&lt;/p&gt;</reference>
 						<cweid>-1</cweid>
 						<wascid>-1</wascid>
-						<sourceid>234</sourceid>
+						<sourceid>229</sourceid>
 					</alertitem>
 				
 				
@@ -2130,7 +1920,7 @@ json:continueCode</otherinfo>
 						<reference>&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7234&lt;/p&gt;&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7231&lt;/p&gt;&lt;p&gt;https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&lt;/p&gt;</reference>
 						<cweid>524</cweid>
 						<wascid>13</wascid>
-						<sourceid>7</sourceid>
+						<sourceid>6</sourceid>
 					</alertitem>
 				
 				
@@ -2158,6 +1948,36 @@ json:continueCode</otherinfo>
 							
 								<instance>
 									<uri>http://host.docker.internal:3000/assets/public/favicon_js.ico</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>max-age=0</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/ftp/acquisitions.md</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>max-age=0</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/ftp/incident-support.kdbx</uri>
+									<method>GET</method>
+									<param></param>
+									<attack></attack>
+									<evidence>max-age=0</evidence>
+									<otherinfo></otherinfo>
+								</instance>
+							
+							
+								<instance>
+									<uri>http://host.docker.internal:3000/ftp/legal.md</uri>
 									<method>GET</method>
 									<param></param>
 									<attack></attack>
@@ -2226,13 +2046,13 @@ json:continueCode</otherinfo>
 								</instance>
 							
 						</instances>
-						<count>8</count>
+						<count>11</count>
 						<solution></solution>
 						<otherinfo></otherinfo>
 						<reference>&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7234&lt;/p&gt;&lt;p&gt;https://datatracker.ietf.org/doc/html/rfc7231&lt;/p&gt;&lt;p&gt;https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html&lt;/p&gt;</reference>
 						<cweid>524</cweid>
 						<wascid>13</wascid>
-						<sourceid>1</sourceid>
+						<sourceid>8</sourceid>
 					</alertitem>
 				
 			</alerts>

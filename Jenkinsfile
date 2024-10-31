@@ -38,6 +38,8 @@ pipeline {
                     sh '''
                         docker cp zap:/zap/wrk/reports/zap_html_report.html "${WORKSPACE}/results/zap_html_report.html"
                         docker cp zap:/zap/wrk/reports/zap_xml_report.xml "${WORKSPACE}/results/zap_xml_report.xml"
+                        docker stop zap
+                        docker rm zap
                     '''
                     echo 'Archiving results'
                     archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
@@ -64,8 +66,8 @@ pipeline {
         stage('Cleaning') {
             steps {
                 sh '''
-                    docker stop zap juice-shop
-                    docker rm zap
+                    docker stop juice-shop
+                    docker rm juice-shop
                 '''
             }
             post {
