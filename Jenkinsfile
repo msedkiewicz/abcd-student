@@ -44,13 +44,20 @@ pipeline {
                 }
             }
         }
-    }
-    post {
-        always {
-            echo 'Archiving results'
-            archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
-            echo 'Sending reports to DefectDojo'
-            defectDojoPublisher(artifact: 'results/zap_xml_report.xml', productName: 'Juice Shop', scanType: 'ZAP Scan', engagementName: 'magdalenainspirations@gmail.com')
+         stage('OSV-Scanner') {
+            steps {
+                sh '''
+                osv-scanner scan --lockfile package-lock.json --json > osv_report.json  || true
+                '''
+            }
         }
     }
+    // post {
+    //     always {
+    //         echo 'Archiving results'
+    //         archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
+    //         echo 'Sending reports to DefectDojo'
+    //         defectDojoPublisher(artifact: 'results/zap_xml_report.xml', productName: 'Juice Shop', scanType: 'ZAP Scan', engagementName: 'magdalenainspirations@gmail.com')
+    //     }
+    // }
 }
