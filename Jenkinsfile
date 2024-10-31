@@ -51,7 +51,7 @@ pipeline {
         stage('OSV-Scanner') {
             steps {
                 sh '''
-                osv-scanner scan --lockfile juice-shop package-lock.json --json --output "${WORKSPACE}/results/osv-report.json"  || true
+                osv-scanner scan --lockfile package-lock.json --json --output "${WORKSPACE}/results/osv-report.json"  || true
                 '''
             }
             post {
