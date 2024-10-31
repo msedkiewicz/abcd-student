@@ -64,11 +64,11 @@ pipeline {
             // }
         }
         stage('Cleaning') {
-            // steps {
-            //     sh '''
-            //         docker stop juice-shop
-            //     '''
-            // }
+            steps {
+                sh '''
+                    docker stop juice-shop
+                '''
+            }
             post {
                 always {
                     echo 'cleaning complete'
