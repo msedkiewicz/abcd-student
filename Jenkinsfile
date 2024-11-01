@@ -79,6 +79,20 @@ pipeline {
                 }
             }
         }
+        stage ('SEMGREP') {
+            steps {
+                sh 'semgrep scan --config auto --json > results/semgrep-results.json'
+            }
+            post {
+                always {
+                    echo 'Archiving results'
+                    archiveArtifacts artifacts: 'results/**/*', fingerprint: true, allowEmptyArchive: true
+                    echo 'Sending SEMGREP scan report to DefectDojo'
+                    defectDojoPublisher(artifact: 'results/semgrep-results.json', productName: 'Juice Shop', scanType: 'Semgrep JSON Report', engagementName: 'magdalenainspirations@gmail.com')
+                }
+            }
+        }
+
         stage('Cleaning') {
             steps {
                 sh '''
